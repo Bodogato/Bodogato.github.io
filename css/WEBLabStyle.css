@@ -161,7 +161,7 @@
 
 #box3{
     width: auto;
-    height:25%;
+    height:auto;
 
     flex-direction: row ;                
     align-items: center;
@@ -170,7 +170,12 @@
 #box5{
     width: auto;
     height: 100%;
-
+    flex-direction: column ;                
+    
+    justify-content: center;
+                   
+    
+    
     background-color: #cebca4;
 }
 
@@ -193,13 +198,13 @@
  
   #box6{
       width: auto;
-      height: 100%;
+      height: auto;
 
       flex-direction: row;                
       align-items: flex-start;
       justify-content: center;
   }
-  
+
   
 
 
