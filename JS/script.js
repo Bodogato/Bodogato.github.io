@@ -56,7 +56,7 @@ function setCookie(name, value, options = {}) {
 	  let optionValue = options[optionKey];
 		if (optionValue !== true) 
 		{
-			updatedCookie += "=" + optionValue;
+			updatedCookie += " " + optionValue;
 		}
 	}
 	document.cookie = updatedCookie;
@@ -85,6 +85,7 @@ function maxNumber(){
 	console.log(document.cookie);
 }
 
+
 window.onload = afterReload();
 
 function afterReload() {
@@ -102,5 +103,76 @@ function afterReload() {
 		}
 	} 
 }
+//======================== Task_4 ========================//
+ 
+function task4() {
+    var pos = document.querySelector('input[name="position"]:checked').value;
+    if (pos == "Right"){
+        if (document.querySelector('.pos2').checked == true){
+            document.getElementById("box2").style.justifyContent = "right";
+            localStorage.setItem("pos2", "right")
+        }
+        if (document.querySelector('.pos4').checked == true){
+            document.getElementById("box4").style.textAlign = "right";
+            localStorage.setItem("pos4", "right")
+        }
+        if (document.querySelector('.pos5').checked == true){
+            document.getElementById("box5").style.textAlign = "right";
+            localStorage.setItem("pos5", "right")
+        }
+    }
+    if (pos == "Center"){
+        if (document.querySelector('.pos2').checked == true){
+            document.getElementById("box2").style.justifyContent = "center";
+            localStorage.setItem("pos2", "center")
+        }
+        if (document.querySelector('.pos4').checked == true){
+            document.getElementById("box4").style.textAlign = "center";
+            localStorage.setItem("pos4", "center")
+        }
+        if (document.querySelector('.pos5').checked == true){
+            document.getElementById("box5").style.textAlign = "center";
+            localStorage.setItem("pos5", "center")
+        }
+    }
+}
 
+//======================== Task_5 ========================//
 
+function logSelection(event) {
+    const log = document.getElementById('log');
+    const selection = event.target.value.substring(event.target.selectionStart, event.target.selectionEnd);
+    log.textContent = selection;
+}
+
+const input = document.querySelector('input');
+input.addEventListener('select', logSelection);
+
+function addelement() {
+    var text = document.getElementById('log').textContent;
+    var completelist = document.getElementById("numList1");
+
+    completelist.innerHTML += "<li>Item -  " + text + "</li>";
+
+}
+
+function saveAll() {
+    var toStorage = [];
+    var values = document.querySelectorAll('li');
+    for (var i = 0; i < values.length; i++) {
+        toStorage.push(values[i].innerHTML);
+    }
+    localStorage.setItem('items', JSON.stringify(toStorage));
+    document.getElementById(`numListForm`).setAttribute("class","hidden" );
+}
+
+window.onunload = function () {
+    var pos2 = localStorage.getItem('pos2')
+    var pos4 = localStorage.getItem('pos4')
+    var pos5 = localStorage.getItem('pos5')
+    localStorage.clear();
+    localStorage.setItem("pos2", pos2)
+    localStorage.setItem("pos4", pos4)
+    localStorage.setItem("pos5", pos5)
+
+}

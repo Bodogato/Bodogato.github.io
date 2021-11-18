@@ -29,6 +29,16 @@
                     <div class="cont2-3-5">
                         <aside id="box2">
                             <img id="imag_2" alt="Fumo" src="img/Fumo1.jpg">
+                            <div class="field" id="numListBlock-1">
+                                <ol id="numList1"></ol>
+                                <form id="numListForm" onsubmit="return false;">
+                                    <input type="text" value="Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, corrupti? Pol, a bene acipenser.">
+                                    <p id="log" class="hidden"></p>
+                                    <button onclick="addelement()">Add</button>
+                                    <br>
+                                    <button id = "numListSave-1" onclick="saveAll()">Save</button>
+                                </form>
+                            </div>
                         </aside>
                         <div class ="cont3-5">
                             <div id="box3">
@@ -81,10 +91,20 @@
                     </div>
                 </div>
                 <section class = "middle_right_wrapper">
-                    <div id="box4">
+                    <div id="box4" onmouseout="task4()">
                         <p>
                             Junko plotted the invasion to the Moon in order to get revenge on Chang'e. She filled the Near Side of the Moon with fairies, and thus life, forcing the Lunarians to escape so she could use that moment to kill Chang'e. Knowing the Lunarians would likely flee to the Dream World, she sent Hecatia to trap them there. Over half a year the Lunarians took no action against her, causing a stagnation in Junko's plan and a steady appease of her anger, growing bored every time. It was at that time when the protagonist appears before her, clean of all impurity much to her surprise. Because her anger was already appeased, she saw no goal in boxinuing the invasion and admitted defeat before the battle.
                         </p>
+                            <p>Please select text location:</p>
+                            <form id="task4form">
+                                <p><input class="pos2" type="checkbox" name="pos2" id="pos2" value="pos2"> pos2</p>
+                                <p><input class="pos4" type="checkbox" name="pos4" id="pos4" value="pos4"> pos4</p>
+                                <p><input class="pos5" type="checkbox" name="pos5" id="pos5" value="pos5"> pos5</p>
+                                <input type="radio" id="right" value="Right" name="position">
+                                <label for="right">Right</label><br>
+                                <input type="radio" id="center" value="Center" name="position">
+                                <label for="center">Center</label><br>
+                            </form>
                     </div>
                     <article id="box6">
                         <p>
